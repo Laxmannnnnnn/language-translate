@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,105 +15,136 @@ body{
   min-height: 100vh;
   background: #5372F0;
 }
-.container{
-  max-width: 690px;
+
+.container {
+  max-width: 700px;
   width: 100%;
   padding: 30px;
   background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.01);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
-.wrapper{
-  border-radius: 5px;
-  border: 1px solid #ccc;
+
+.container:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
-.wrapper .text-input{
+
+.wrapper {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.wrapper .text-input {
   display: flex;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
-.text-input .to-text{
-  border-radius: 0px;
-  border-left: 1px solid #ccc;
+
+.text-input .to-text {
+  border-radius: 0;
+  border-left: 1px solid #ddd;
 }
-.text-input textarea{
+
+.text-input textarea {
   height: 250px;
   width: 100%;
   border: none;
   outline: none;
   resize: none;
   background: none;
-  font-size: 18px;
-  padding: 10px 15px;
-  border-radius: 5px;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 8px;
 }
-.text-input textarea::placeholder{
-  color: #b7b6b6;
+
+.text-input textarea::placeholder {
+  color: #999;
 }
-.controls, li, .icons, .icons i{
+
+.controls,
+li,
+.icons,
+.icons i {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.controls{
+
+.controls {
   list-style: none;
   padding: 12px 15px;
 }
-.controls .row .icons{
+
+.controls .row .icons {
   width: 38%;
 }
-.controls .row .icons i{
+
+.controls .row .icons i {
   width: 50px;
-  color: #adadad;
+  color: #999;
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s ease;
   justify-content: center;
 }
-.controls .row.from .icons{
+
+.controls .row.from .icons {
   padding-right: 15px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ddd;
 }
-.controls .row.to .icons{
+
+.controls .row.to .icons {
   padding-left: 15px;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #ddd;
 }
-.controls .row select{
+
+.controls .row select {
   color: #333;
   border: none;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
   background: none;
   padding-left: 5px;
 }
-.text-input textarea::-webkit-scrollbar{
-  width: 4px;
-}
-.controls .row select::-webkit-scrollbar{
+
+.text-input textarea::-webkit-scrollbar,
+.controls .row select::-webkit-scrollbar {
   width: 8px;
 }
+
 .text-input textarea::-webkit-scrollbar-track,
-.controls .row select::-webkit-scrollbar-track{
+.controls .row select::-webkit-scrollbar-track {
   background: #fff;
 }
-.text-input textarea::-webkit-scrollbar-thumb{
-  background: #ddd;
+
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #bbb;
   border-radius: 8px;
 }
-.controls .row select::-webkit-scrollbar-thumb{
-  background: #999;
+
+.controls .row select::-webkit-scrollbar-thumb {
+  background: #888;
   border-radius: 8px;
   border-right: 2px solid #ffffff;
 }
-.controls .exchange{
-  color: #adadad;
+
+.controls .exchange {
+  color: #888;
   cursor: pointer;
   font-size: 16px;
   transition: transform 0.2s ease;
 }
-.controls i:active{
+
+.controls .exchange:hover {
+  transform: scale(1.1);
+  color: #5372F0;
+}
+
+.controls i:active {
   transform: scale(0.9);
 }
-.container button{
+
+.container button {
   width: 100%;
   padding: 14px;
   outline: none;
@@ -120,35 +153,47 @@ body{
   cursor: pointer;
   margin-top: 20px;
   font-size: 17px;
-  border-radius: 5px;
+  border-radius: 8px;
   background: #5372F0;
+  transition: background 0.3s ease;
 }
 
-@media (max-width: 660px){
-  .container{
+.container button:hover {
+  background: #3b59d0;
+}
+
+@media (max-width: 660px) {
+  .container {
     padding: 20px;
   }
-  .wrapper .text-input{
+
+  .wrapper .text-input {
     flex-direction: column;
   }
-  .text-input .to-text{
-    border-left: 0px;
-    border-top: 1px solid #ccc;
+
+  .text-input .to-text {
+    border-left: 0;
+    border-top: 1px solid #ddd;
   }
-  .text-input textarea{
+
+  .text-input textarea {
     height: 200px;
   }
-  .controls .row .icons{
+
+  .controls .row .icons {
     display: none;
   }
-  .container button{
+
+  .container button {
     padding: 13px;
     font-size: 16px;
   }
-  .controls .row select{
+
+  .controls .row select {
     font-size: 16px;
   }
-  .controls .exchange{
+
+  .controls .exchange {
     font-size: 14px;
   }
 }
